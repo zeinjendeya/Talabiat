@@ -1,11 +1,5 @@
-const express = require('express');
-const path = require('path');
+const app = require('./app.js');
 
-const app = express();
-
-app.set('port', 3000);
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, '..', 'public')));
-
-module.exports = app;
+app.listen(app.get('port'), () => {
+  console.log(`Server is running at http://localhost:${app.get('port')}`);
+});
