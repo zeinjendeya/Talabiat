@@ -5,7 +5,7 @@ const { boomify, errorHandler } = require("./src/utils");
 const { signup, login, logout } = require("./src/handlers");
 const {auth} = require('./src/middlewares/auth');
 
-//router.post('/sign-up', signup);
+router.post('/sign-up', signup);
 //router.post('/log-in', login);
 
 router.use(auth);
