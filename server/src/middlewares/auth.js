@@ -1,17 +1,16 @@
-const { verifyToke, boomify } = require("../utils");
+const { use } = require("../../router");
+const { verifyToken, boomify } = require("../utils/index");
 
 const auth = (req, res, next) => {
   const { token } = req.cookies;
-
-  verifyToke(token)
+  verifyToken(token)
     .then(({ userId, userName }) => {
       req.userId = userId;
       req.userName = userName;
       next();
     })
     .catch(() => {
-      res.clearCookie("token");
-      next(boomify(401, "Unauthorized"));
+      next(boomify(401, "unauthorized"));
     });
 };
 
