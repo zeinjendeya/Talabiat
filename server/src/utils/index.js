@@ -1,9 +1,11 @@
 const errorHandler = require("./error");
 const boomify = require("./boomify");
-const validation = require("./validation");
+const validationSchema = require("./validationSchema");
+const signToken = require("./signToken");
 
 module.exports = {
   errorHandler,
   boomify,
-  validation,
+  validationSchema,
+  signToken,
 };
