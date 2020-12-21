@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background-pic{
+    width: 100%;
+    height: 100%;
+    background: url(https://www.besthealthmag.ca/wp-content/uploads/2019/07/junk-food-1.gif);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.log-in{
+    background-color: #D1D3D2;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    text-align:left;
+    line-height: 50px;
+    width: 30%;
+    height: 60%;
+    margin: auto;
+}
+
+.log-in-form{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:  9% auto;
+    gap: 4px;
+}
+
+p{
+    width: fit-content;
+    margin: auto;
+    font-size: 2rem;
+    line-height: 15px;
+}
+
+label{
+    width: fit-content;
+    height: 10%;
+    font-size: 15px;
+    margin: auto 15%;
+}
+
+input{
+    cursor: pointer;
+    width: 70%;
+    height: 12%;
+    border-radius: 5px;
+    border: 0.1px solid black;
+    margin: auto;
+}
+
+button{
+    width: fit-content;
+    height: 10%;
+    margin: auto;
+}
