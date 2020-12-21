@@ -71,7 +71,7 @@ html, body{
 }
 
 
-.seperate{
+.separate{
     width: 1px;
     height: 70%;
     border: 1px solid black;
@@ -138,7 +138,7 @@ button{
         flex-direction: column;
         height: 90%;
     }
-    .seperate{
+    .separate{
         width: 70%;
         height: 1px;
         border: 1px solid black;
