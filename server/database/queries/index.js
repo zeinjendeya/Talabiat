@@ -6,6 +6,7 @@ const getSideDish = require("./getSideDish");
 const getMeal = require("./getMeal");
 const getMenu = require("./getMenu");
 const getRestaurant = require("./getRestaurant");
+const getRestaurants = require("./getRestaurants");
 
 module.exports = {
   getUser,
@@ -16,4 +17,5 @@ module.exports = {
   getMeal,
   getMenu,
   getRestaurant,
+  getRestaurants,
 };
