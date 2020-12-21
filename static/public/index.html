@@ -4,24 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../general/index.css" />
-    <title>Talabiat</title>
+    <title>Talabat</title>
   </head>
   <body>
-    <div class="container" id="container">
-      <div class="nav-bar" id="nav-bar">
-        <h1 class="food" id="food">Talabiat</h1>
-      </div>
-      <p class="topic" id="topic">Food...Who doesn't love food?</p>
-      <p class="message" id="message">
-        order your favorite meal from your favorite restaurant without leaving your bed!
-      </p>
-      <div class="btns" id="btns">
-        <p class="sing-up-page" id="sign-up-page">
-          <a href="signup.html">Sign Up</a> and enjoy our services
-        </p>
-        <p class="log-in-page" id="log-in-page">
-          <a href="login.html">Log In</a> if you already have an account
-        </p>
+    <div class="background-pic" id="background-pic">
+      <div class="content" id="content">
+        <div class="container-1" id="container-1">
+          <p class="food" id="food">Talabat</p>
+          <p class="topic" id="topic">Food...Who doesn't love food?</p>
+          <p class="message" id="message">
+            order your favorite meal without
+            leaving your bed!
+          </p>
+        </div>
+
+        <div class="seperate" id="seperate"></div>
+
+        <div class="signup-container" id="signup-container">
+          <form
+            class="signup-form"
+            id="signup-form"
+            method="POST"
+            action="/signup"
+          >
+            <label for="user-name" form="signup-form"
+              >Username</label>
+              <input
+                type="text"
+                name="username"
+                class="user-info"
+                id="user-name"
+            />
+
+            <label for="userName" form="signup-form"
+              >Name</label>
+              <input
+                type="text"
+                name="name"
+                class="user-info"
+                id="userName"
+            />
+
+            <label for="user-password" form="signup-form"
+              >Password</label>
+              <input
+                type="password"
+                name="password"
+                class="user-info"
+                id="user-password"
+            />
+
+            <label for="user-confirmed-password" form="signup-form"
+              >Confirm Password</label>
+              <input
+                type="password"
+                name="confirmedPassword"
+                class="user-info"
+                id="user-confirmed-password"
+            />
+
+            <button type="submit" class="signup-btn" id="signup-btn">
+              Sign Up
+            </button>
+          </form>
+          <a href="login.html">already have an account?</a>
+        </div>
       </div>
     </div>
   </body>

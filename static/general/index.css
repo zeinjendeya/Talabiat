@@ -6,76 +6,208 @@
 html, body{
     width: 100vw;
     height: 100vh;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
 }
 
-.container{
-    margin: 0 auto;
+.background-pic{
     width: 100%;
     height: 100%;
-    background-color: #FF9C41;
-    border: 2px solid #000000;
-    text-align: center;
-    line-height: 60px;
+    background: url(https://www.besthealthmag.ca/wp-content/uploads/2019/07/junk-food-1.gif);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.nav-bar{
-    width: 100%;
-    margin: 0 auto;
-    justify-self: start;
+.content{
+    margin: auto;
+    width: 60%;
+    height: 80%;
+    background-color: #D1D3D2;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    text-align:left;
     line-height: 50px;
-    align-self: start;
-    border-bottom: 3px solid #000000;
-    background: #CE7727;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 
-.topic, .message{
-    margin: auto;
+.container-1{
+    margin: auto 5% auto 0;
+    width: 55%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.topic, .message, .food{
+    width: fit-content;
+    margin: auto 3% auto 15%;
     font-weight:900;
     line-height: 30px;
-    width: fit-content;
+    text-align: left;
+}
+
+.food{
+    margin-bottom: 5%;
+    font-size: 2rem;
 }
 
 .topic{
-    margin-bottom: 0;
-    font-size: 2.3rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 1.5rem;
 }
 
 .message{
-    margin-top: 20px;
-    font-size: 1.4rem;
-}
-
-.btns{
-    width: 100%;
-    text-align: center;
-    margin-bottom: auto;
-    padding: 10px;
+    margin-top: 5%;
+    font-size: 1.2rem;
 }
 
 
-.sing-up-page, .log-in-page{
-    width: fit-content;
-    margin: auto;
-    line-height: 20px;
-    padding: 10px;
-    font-weight: 700;
+.seperate{
+    width: 1px;
+    height: 70%;
+    border: 1px solid black;
+    margin: auto 0;
 }
-
 
 a{
     width: fit-content;
+    margin: auto;
     color: #000000;
-    background: #CE7727;
     font-weight:700;
-    border: 2px solid #000000;
     text-align: center;
     line-height: 20px;
     padding: 0px 10px;
-    text-decoration-line: none;
 }
 
+.signup-container{
+    margin: auto 0 auto 5%;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-form{
+    width: 90%;
+    height: 80%;
+    margin: auto 0 auto 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+label{
+    width: fit-content;
+    height: 12%;
+    font-size: 15px;
+}
+
+input{
+    cursor: pointer;
+    width: 70%;
+    height: 12%;
+    border-radius: 5px;
+
+}
+
+button{
+    width: fit-content;
+    height: 10%;
+    margin: auto 27%;
+}
+
+
+@media (max-width: 600px){
+
+    html{
+        font-size: 15px;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+    }
+    .seperate{
+        width: 70%;
+        height: 1px;
+        border: 1px solid black;
+        margin: auto;
+    }
+
+    .container-1{
+        margin: 5% auto 0 auto;
+        width: 80%;
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .signup-container{
+        margin: auto 10.9% auto 14%;
+        width: 75%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    button{
+        width: 60%;
+        margin: auto 15%;
+        height: 10%;
+    }
+
+     .signup-form{
+        width: 90%;
+        height: 80%;
+        margin: auto 12%;
+        gap: 5px;
+     }
+
+    .label{
+        width: fit-content;
+        height: 28px;
+        display: flex;
+        align-content: center;
+        font-size: 12px;
+    }
+
+    input{
+        width: 85%;
+    }
+
+    a{
+        font-size: 10px;
+        line-height: 10px;
+        margin: 0 auto 20px auto;
+    }
+
+    .food{
+        font-size: 20px;
+    }
+    .topic{
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .message{
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .topic, .message, .food{
+        line-height: 20px;
+    }
+}
