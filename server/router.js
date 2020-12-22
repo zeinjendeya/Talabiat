@@ -8,6 +8,7 @@ const {
   logout,
   handleRestaurants,
   handleRestaurant,
+  handleMenu,
 } = require("./src/handlers/index");
 const auth = require("./src/middlewares/auth");
 
@@ -18,7 +19,8 @@ router.use(auth);
 
 router.get("/logout", logout);
 router.get("/restaurants", handleRestaurants);
-router.get("/restaurants/:restaurantID" , handleRestaurant)
+router.get("/restaurants/:restaurantID" , handleRestaurant);
+router.get("/restaurants/:restaurantID/menu" , handleMenu);
 
 router.use((req, res, next) => {
   next(boomify(404, "resource not found"));

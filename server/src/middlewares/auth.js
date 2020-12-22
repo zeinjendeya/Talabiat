@@ -1,4 +1,3 @@
-const { use } = require("../../router");
 const { verifyToken, boomify } = require("../utils/index");
 
 const auth = (req, res, next) => {

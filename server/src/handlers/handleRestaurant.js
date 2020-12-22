@@ -4,7 +4,9 @@ const { boomify } = require("../utils/index");
 const handleRestaurant = (req, res, next) => {
   getRestaurant(req.params.restaurantID)
     .then(({ rows, rowCount }) => {
-      if (rowCount === 0) {
+      if (!req.userId) {
+        next(boomify(401, " not authorized"));
+      } else if (rowCount === 0) {
         next(boomify(404, " restaurant not found"));
       } else {
         res.status(200).json({ status: 200, data: rows[0] });
