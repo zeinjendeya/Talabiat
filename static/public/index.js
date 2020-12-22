@@ -6,6 +6,7 @@ const userConfirmedPassword = document.getElementById(
   "user-confirmed-password"
 );
 const signupContainer = document.getElementById("signup-container");
+const signupBtn = document.getElementById("signup-btn");
 
 const displayMessage = (msgText) => {
   const messageP = document.createElement("p");
@@ -13,8 +14,9 @@ const displayMessage = (msgText) => {
   signupContainer.appendChild(messageP);
 };
 
-signupForm.addEventListener("click", (e) => {
-  e.preventDefault();
+signupBtn.addEventListener("click", () => {
+  //e.preventDefault();
+  console.log("here");
   fetch("/signup", {
     method: "POST",
     headers: {
@@ -29,13 +31,15 @@ signupForm.addEventListener("click", (e) => {
   })
     .then((res) => res.json())
     .then((result) => {
-      if (result.status === 400) {
-        displayMessage("invalid password or username, please check again");
-      } else if (result.status === 409) {
-        displayMessage("this username isn't available please try again");
-      } else {
-        window.location.href = "/login.html";
-      }
+      console.log(result);
+      // if (result.status === 400) {
+      //   displayMessage("invalid password or username, please check again");
+      // } else if (result.status === 409) {
+      //   displayMessage("this username isn't available please try again");
+      // } else {
+      //   console.log("i/m here wallahi");
+      //   window.location.href = "/login.html";
+      // }
     })
     .catch((err) => {
       displayMessage("Oops...something went wrong");
