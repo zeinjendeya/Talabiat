@@ -1,6 +1,6 @@
 const connection = require("../config/connection");
 
-const getRestaurants = (restaurantName) => {
+const getRestaurants = () => {
   const sql = {
     text: "SELECT * FROM restaurants",
   };

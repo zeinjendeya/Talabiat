@@ -1,9 +1,9 @@
 const connection = require("../config/connection");
 
-const getRestaurant = (restaurantName) => {
+const getRestaurant = (restaurantID) => {
   const sql = {
-    text: "SELECT * FROM restaurants where restaurantName = $1 ;",
-    values: [restaurantName],
+    text: "SELECT * FROM restaurants where id = $1 ;",
+    values: [restaurantID],
   };
   return connection.query(sql);
 };
