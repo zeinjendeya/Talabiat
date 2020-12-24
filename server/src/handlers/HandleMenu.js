@@ -4,6 +4,7 @@ const {
   getSideDish,
   getDrink,
   getDessert,
+  getRestaurant,
 } = require("../../database/queries/index");
 const { boomify } = require("../utils/index");
 
@@ -15,7 +16,7 @@ const handleMenu = (req, res, next) => {
       } else if (rowCount === 0) {
         throw boomify(404, " restaurant not found");
       } else {
-        getMenu(req.params.restaurantID)
+        getMenu(rows[0].id)
           .then(({ rows, rowCount }) => {
             const food = {};
             getMeal(rows[0].id)
