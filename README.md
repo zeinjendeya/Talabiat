@@ -1,6 +1,6 @@
 # Talabiat
 
- ## link for app is [here](https://talabiat.herokuapp.com/)
+  link for app is [here](https://talabiat.herokuapp.com/)
 
  ## installation guid
   - ```npm i``` in terminal
