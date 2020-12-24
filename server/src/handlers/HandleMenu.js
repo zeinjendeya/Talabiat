@@ -13,7 +13,7 @@ const handleMenu = (req, res, next) => {
       if (!req.userId) {
         throw boomify(401, " not authorized");
       } else if (rowCount === 0) {
-        next(boomify(404, " restaurant not found"));
+        throw boomify(404, " restaurant not found");
       } else {
         getMenu(req.params.restaurantID)
           .then(({ rows, rowCount }) => {
