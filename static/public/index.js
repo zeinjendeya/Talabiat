@@ -14,9 +14,8 @@ const displayMessage = (msgText) => {
   signupContainer.appendChild(messageP);
 };
 
-signupBtn.addEventListener("click", () => {
-  //e.preventDefault();
-  console.log("here");
+signupForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   fetch("/signup", {
     method: "POST",
     headers: {
@@ -31,15 +30,13 @@ signupBtn.addEventListener("click", () => {
   })
     .then((res) => res.json())
     .then((result) => {
-      console.log(result);
-      // if (result.status === 400) {
-      //   displayMessage("invalid password or username, please check again");
-      // } else if (result.status === 409) {
-      //   displayMessage("this username isn't available please try again");
-      // } else {
-      //   console.log("i/m here wallahi");
-      //   window.location.href = "/login.html";
-      // }
+      if (result.status === 400) {
+        displayMessage("invalid password or username, please check again");
+      } else if (result.status === 409) {
+        displayMessage("this username isn't available please try again");
+      } else {
+        window.location.href = "/login.html";
+      }
     })
     .catch((err) => {
       displayMessage("Oops...something went wrong");
