@@ -26,7 +26,7 @@ loginForm.addEventListener("submit", (e) => {
         displayMessage(res.error);
       } else {
         console.log("hey");
-        //window.location.href = "/restaurants.html";
+        window.location.href = "/restaurants.html";
       }
     });
 });
