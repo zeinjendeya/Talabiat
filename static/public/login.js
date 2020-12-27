@@ -24,8 +24,9 @@ loginForm.addEventListener("submit", (e) => {
     .then((res) => {
       if (res.status === 400) {
         displayMessage(res.error);
+      } else if(res.status === 500) {
+        displayMessage("something went wrong")
       } else {
-        console.log("hey");
         window.location.href = "/restaurants.html";
       }
     });
