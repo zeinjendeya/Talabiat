@@ -27,13 +27,13 @@ const login = (req, res, next) => {
     .then((isAuth) => {
       if (!isAuth) {
         throw boomify(400, "incorrect information, check again");
+      } else {
+        return signToken(id, userName);
       }
-      return signToken(id, userName);
     })
     .then((token) => {
-      res
-        .cookie("token", token)
-        .json({ status: 200, message: "logged in successfully" });
+      res.cookie("token", token);
+      res.status(200).json({ status: 200, message: "logged in successfully" });
     })
     .catch(next);
 };
