@@ -11,9 +11,7 @@ const { boomify } = require("../utils/index");
 const handleMenu = (req, res, next) => {
   getRestaurant(req.params.restaurantID)
     .then(({ rows, rowCount }) => {
-      if (!req.userId) {
-        throw boomify(401, " not authorized");
-      } else if (rowCount === 0) {
+      if (rowCount === 0) {
         throw boomify(404, " restaurant not found");
       } else {
         getMenu(rows[0].id)
