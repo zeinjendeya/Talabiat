@@ -4,7 +4,7 @@ const { boomify } = require("../utils/index");
 const handleRestaurants = (req, res, next) => {
   getRestaurants()
     .then(({ rows, rowCount }) => {
-      if (!req.cookies.token) {
+      if (!req.userId) {
         throw boomify(401, " not authorized");
       } else if (rowCount === 0) {
         throw boomify(404, " restaurant not found");
