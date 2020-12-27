@@ -30,11 +30,11 @@ const login = (req, res, next) => {
       }
       return signToken(id, userName);
     })
-    .then((token) =>
+    .then((token) => {
       res
         .cookie("token", token)
-        .json({ status: 200, message: "logged in successfully" })
-    )
+        .json({ status: 200, message: "logged in successfully" });
+    })
     .catch(next);
 };
 
