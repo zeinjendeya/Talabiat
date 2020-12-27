@@ -14,7 +14,7 @@ const auth = require("./src/middlewares/auth");
 router.post("/signup", signup);
 router.post("/login", login);
 
-router.use(auth);
+//router.use(auth);
 
 router.get("/logout", logout);
 router.get("/restaurants", handleRestaurants);
