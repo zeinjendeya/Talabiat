@@ -66,7 +66,7 @@ nav{
     width: 1px;
     height: 20px;
     margin: auto;
-    border: 1px solid black;
+    border: 1px solid rgb(189, 185, 185);
 }
 
 .search-bar{
