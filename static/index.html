@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talabat</title>
+  </head>
+  <body>
+
+    <section class="heading">
+      <nav>
+        <p>Talabat</p>
+        <a>Home</a>
+        <a>Contact us</a>
+      </nav>
+      <div class="search-bar">
+        <img alt="search-icon" />
+        <input class="search-input" type="text" id="search-input" />
+      </div>
+      <button type="button" class="log-in" id="log-in">Log in</button>
+      <div class="devider"></div>
+      <button type="button" class="sign-up" id="sign-up">Sign up</button>
+
+      <div class="login-container" id="login-container">
+        <form
+          class="log-in-form"
+          id="log-in-form"
+          method="POST"
+          action="/login"
+        >
+          <label for="user-name" form="signup-form">Username</label>
+          <input
+            type="text"
+            name="username"
+            class="user-info"
+            id="name"
+            placeholder="enter your username"
+            autocomplete="off"
+          />
+
+          <label for="user-password" form="signup-form">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="user-info"
+            id="password"
+            placeholder="enter your password"
+            autocomplete="off"
+          />
+          <button type="submit" class="login-btn" id="login-btn">
+            Log in
+          </button>
+        </form>
+      </div>
+
+      <div class="signup-container" id="signup-container">
+        <span class="close">&times;</span>
+            <form
+              class="signup-form"
+              id="signup-form"
+              method="POST"
+              action="/signup"
+            >
+              <label for="user-name" form="signup-form"
+                >Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  class="user-info"
+                  id="user-name"
+                  placeholder="enter your username"
+                  autocomplete="off"
+              />
+  
+              <label for="userName" form="signup-form"
+                >Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="user-info"
+                  id="userName"
+                  placeholder="enter your name"
+                  autocomplete="off"
+              />
+  
+              <label for="user-password" form="signup-form"
+                >Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  class="user-info"
+                  id="user-password"
+                  placeholder="enter your password"
+                  autocomplete="off"
+              />
+  
+              <label for="user-confirmed-password" form="signup-form"
+                >Confirm</label>
+                <input
+                  type="password"
+                  name="confirmedPassword"
+                  class="user-info"
+                  id="user-confirmed-password"
+                  placeholder="confirm your password"
+                  autocomplete="off"
+              />
+  
+              <button type="submit" class="signup-btn" id="signup-btn">
+                Sign Up
+              </button>
+            </form>
+      </div>
+
+      <div class="authed-user" id="authed-user">
+          <img class="profile-pic" id="profile-pic">
+          <button class="logout-btn" id="logout-btn">Log out</button>
+      </div>
+    </section>
+
+    <section class="filter">
+      <div class="all" id="all">
+        <p>All</p>
+      </div>
+
+      <div class="family" id="family">
+        <div class="cate-box">
+          <img alt="family" />
+        </div>
+        <p class="cate-name">Family</p>
+      </div>
+
+      <div class="cafe" id="cafe">
+        <div class="cate-box">
+          <img alt="cafe" />
+        </div>
+        <p class="cate-name">Cafe</p>
+      </div>
+
+      <div class="seafood" id="seafood">
+        <div class="cate-box">
+          <img alt="seafood" />
+        </div>
+        <p class="cate-name">Seafood</p>
+      </div>
+
+      <div class="diner" id="diner">
+        <div class="cate-box">
+          <img alt="diner" />
+        </div>
+        <p class="cate-name">Diner</p>
+      </div>
+
+      <div class="dessert" id="dessert">
+        <div class="cate-box">
+          <img alt="dessert" />
+        </div>
+        <p class="cate-name">Dessert</p>
+      </div>
+
+      <div class="sushi" id="sushi">
+        <div class="cate-box">
+          <img alt="sushi" />
+        </div>
+        <p class="cate-name">Sushi</p>
+      </div>
+    </section>
+    
+  </body>
+</html>
