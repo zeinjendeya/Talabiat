@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
     <title>Talabat</title>
   </head>
   <body>
-    <section class="heading">
+    <header class="heading">
       <nav>
         <p class="logo">Talabat</p>
         <a class="link" href="./index.html">Home</a>
@@ -26,15 +29,11 @@
       <button type="button" class="log-in" id="log-in">Login</button>
       <div class="devider"></div>
       <button type="button" class="sign-up" id="sign-up">Sign up</button>
-    </section>
+    </header>
     <div class="login-container" id="login-container">
-      <form
-        class="log-in-form"
-        id="log-in-form"
-        method="POST"
-        action="/login"
-      >
-        <label for="user-name" form="signup-form">Username</label>
+      <form class="log-in-form" id="log-in-form" method="POST" action="/login">
+        <span class="close" id="close-log">&times;</span>
+        <label for="user-name" form="log-in-form">Username</label>
         <input
           type="text"
           name="username"
@@ -44,7 +43,7 @@
           autocomplete="off"
         />
 
-        <label for="user-password" form="signup-form">Password</label>
+        <label for="user-password" form="log-in-form">Password</label>
         <input
           type="password"
           name="password"
@@ -58,13 +57,8 @@
     </div>
 
     <div class="signup-container" id="signup-container">
-      <span class="close">&times;</span>
-      <form
-        class="signup-form"
-        id="signup-form"
-        method="POST"
-        action="/signup"
-      >
+      <form class="signup-form" id="signup-form" method="POST" action="/signup">
+        <span class="close" id="close-sign">&times;</span>
         <label for="user-name" form="signup-form">Username</label>
         <input
           type="text"
@@ -95,9 +89,7 @@
           autocomplete="off"
         />
 
-        <label for="user-confirmed-password" form="signup-form"
-          >Confirm</label
-        >
+        <label for="user-confirmed-password" form="signup-form">Confirm</label>
         <input
           type="password"
           name="confirmedPassword"
@@ -165,5 +157,6 @@
         <p class="cate-name">Sushi</p>
       </div>
     </section>
+    <script src="./index.js"></script>
   </body>
 </html>
