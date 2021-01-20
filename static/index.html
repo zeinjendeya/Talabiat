@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <title>Talabat</title>
+  </head>
+  <body>
+    <header class="heading">
+      <nav>
+        <p class="logo">Talabat</p>
+        <a class="link" href="./index.html">Home</a>
+        <a class="link" href="./contact.html">Contact us</a>
+      </nav>
+      <div class="search-bar">
+        <img class="search-icon" src="./search (1).png" alt="search-icon" />
+        <input
+          class="search-input"
+          type="text"
+          id="search-input"
+          placeholder="Search for a Restaurant"
+        />
+      </div>
+      <button type="button" class="log-in" id="log-in">Login</button>
+      <div class="devider"></div>
+      <button type="button" class="sign-up" id="sign-up">Sign up</button>
+    </header>
+    <div class="login-container" id="login-container">
+      <form class="log-in-form" id="log-in-form" method="POST" action="/login">
+        <span class="close" id="close-log">&times;</span>
+        <label for="user-name" form="log-in-form">Username</label>
+        <input
+          type="text"
+          name="username"
+          class="user-info"
+          id="name"
+          placeholder="enter your username"
+          autocomplete="off"
+        />
+
+        <label for="user-password" form="log-in-form">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="user-info"
+          id="password"
+          placeholder="enter your password"
+          autocomplete="off"
+        />
+        <button type="submit" class="login-btn" id="login-btn">Log in</button>
+      </form>
+    </div>
+
+    <div class="signup-container" id="signup-container">
+      <form class="signup-form" id="signup-form" method="POST" action="/signup">
+        <span class="close" id="close-sign">&times;</span>
+        <label for="user-name" form="signup-form">Username</label>
+        <input
+          type="text"
+          name="username"
+          class="user-info"
+          id="user-name"
+          placeholder="enter your username"
+          autocomplete="off"
+        />
+
+        <label for="userName" form="signup-form">Name</label>
+        <input
+          type="text"
+          name="name"
+          class="user-info"
+          id="userName"
+          placeholder="enter your name"
+          autocomplete="off"
+        />
+
+        <label for="user-password" form="signup-form">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="user-info"
+          id="user-password"
+          placeholder="enter your password"
+          autocomplete="off"
+        />
+
+        <label for="user-confirmed-password" form="signup-form">Confirm</label>
+        <input
+          type="password"
+          name="confirmedPassword"
+          class="user-info"
+          id="user-confirmed-password"
+          placeholder="confirm your password"
+          autocomplete="off"
+        />
+
+        <button type="submit" class="signup-btn" id="signup-btn">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <div class="authed-user" id="authed-user">
+      <img class="profile-pic" id="profile-pic" />
+      <button class="logout-btn" id="logout-btn">Log out</button>
+    </div>
+
+    <section class="filter">
+      <div class="all" id="all">
+        <p>All</p>
+      </div>
+
+      <div class="cate" id="family">
+        <div class="cate-box">
+          <img class="cate-pic" src="./family.png" alt="family" />
+        </div>
+        <p class="cate-name">Family</p>
+      </div>
+
+      <div class="cate" id="cafe">
+        <div class="cate-box">
+          <img class="cate-pic" src="./coffee-cup.png" alt="cafe" />
+        </div>
+        <p class="cate-name">Cafe</p>
+      </div>
+
+      <div class="cate" id="seafood">
+        <div class="cate-box">
+          <img class="cate-pic" src="./shrimp.png" alt="seafood" />
+        </div>
+        <p class="cate-name">Seafood</p>
+      </div>
+
+      <div class="cate" id="diner">
+        <div class="cate-box">
+          <img class="cate-pic" src="./restaurant.png" alt="diner" />
+        </div>
+        <p class="cate-name">Diner</p>
+      </div>
+
+      <div class="cate" id="dessert">
+        <div class="cate-box">
+          <img class="cate-pic" src="./cupcake.png" alt="dessert" />
+        </div>
+        <p class="cate-name">Dessert</p>
+      </div>
+
+      <div class="cate" id="sushi">
+        <div class="cate-box">
+          <img class="cate-pic" src="./sushi.png" alt="sushi" />
+        </div>
+        <p class="cate-name">Sushi</p>
+      </div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>
