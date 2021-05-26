@@ -34,6 +34,45 @@ CREATE TABLE restaurants (
   income FLOAT
 );
 
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY NOT NULL,
+  restaurantID INTEGER RE4 restaurant(id) ON UPDATE CASCADE,
+  name VARCHAR(155),
+  picture TEXT
+);
 
+CREATE TABLE meals (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255),
+  description TEXT,
+  price FLOAT,
+  rating INTEGER,
+  picture TEXT
+);
+
+CREATE TABLE requests (
+  id SERIAL PRIMARY KEY NOT NULL,
+  customerID INTEGER RE4 customers(id) ON UPDATE CASCADE,
+  restaurantID INTEGER RE4 restaurant(id) ON UPDATE CASCADE,
+  mealID INTEGER RE4 meals(id) ON UPDATE CASCADE,
+  quantity INTEGER,
+  description TEXT
+);
+
+CREATE TABLE orders(
+  id SERIAL PRIMARY KEY NOT NULL,
+  requestID INTEGER RE4 requests(id) ON UPDATE CASCADE,
+  state TEXT,
+  bill FLOAT,
+  arriveTime TIME(6)
+);
+
+CREATE TABLE bills(
+  id SERIAL PRIMARY KEY NOT NULL,
+  customerID INTEGER RE4 customers(id) ON UPDATE CASCADE,
+  restaurantID INTEGER RE4 restaurant(id) ON UPDATE CASCADE,
+  money FLOAT,
+  date TIMESTAMP CURRENT_DATE
+);
 
 COMMIT;
