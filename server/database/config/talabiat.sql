@@ -1,55 +1,39 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, restaurants, menus, meals, desserts, sideDishes, drinks CASCADE;
+DROP TABLE IF EXISTS customers, owners, restaurants, categories, meals, orders, requests, bills CASCADE;
 
-CREATE TABLE users (
+CREATE TABLE customers (
     id SERIAL PRIMARY KEY NOT NULL,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    location TEXT,
+    phone INTEGER,
+    picture TEXT
+);
+
+CREATE TABLE owners (
+    id SERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone INTEGER,
+    picture TEXT
 );
 
 CREATE TABLE restaurants (
   id SERIAL PRIMARY KEY NOT NULL,
-  restaurantName VARCHAR(255),
-  location  VARCHAR(255),
-  type VARCHAR(255)
+  ownerID INTEGER REFERENCES owners(id) ON UPDATE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  location TEXT,
+  phone INTEGER,
+  picture TEXT,
+  description TEXT,
+  rating INTEGER,
+  income FLOAT
 );
 
-CREATE TABLE menus (
-  id SERIAL PRIMARY KEY NOT NULL,
-  menuName VARCHAR(255),
-  restaurantID INTEGER REFERENCES restaurants(id) ON UPDATE CASCADE
-);
 
-CREATE TABLE meals (
-  id SERIAL PRIMARY KEY NOT NULL,
-  mealName VARCHAR(255),
-  price INTEGER,
-  mealPic VARCHAR(255),
-  menuID INTEGER REFERENCES menus(id) ON UPDATE CASCADE
-);
-
-CREATE TABLE desserts (
-  id SERIAL PRIMARY KEY NOT NULL,
-  dessertName VARCHAR(255),
-  price INTEGER,
-  dessertPic VARCHAR(255),
-  menuID INTEGER REFERENCES menus(id) ON UPDATE CASCADE
-);
-
-CREATE TABLE sideDishes (
-  id SERIAL PRIMARY KEY NOT NULL,
-  dishName VARCHAR(255),
-  price INTEGER,
-  dishPic VARCHAR(255),
-  menuID INTEGER REFERENCES menus(id) ON UPDATE CASCADE
-);
-
-CREATE TABLE drinks (
-  id SERIAL PRIMARY KEY NOT NULL,
-  drinkName VARCHAR(255),
-  price INTEGER,
-  menuID INTEGER REFERENCES menus(id) ON UPDATE CASCADE
-);
 
 COMMIT;
