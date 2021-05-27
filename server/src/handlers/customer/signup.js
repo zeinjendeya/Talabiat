@@ -21,7 +21,7 @@ const signupCustomer = async (req, res, next) => {
       res.status(201).json({ status: 201, message: "signed up successfully" });
 
   }catch(err){
-
+    next(err);
   }
 
 };
