@@ -8,6 +8,8 @@ const getMenu = require("./getMenu");
 const getRestaurant = require("./getRestaurant");
 const getRestaurants = require("./getRestaurants");
 
+const { getCustomerByEmail, signupCustomerQuery } = require("./customer");
+
 module.exports = {
   getUser,
   addUser,
@@ -18,4 +20,6 @@ module.exports = {
   getMenu,
   getRestaurant,
   getRestaurants,
+  getCustomerByEmail,
+  signupCustomerQuery,
 };
