@@ -1,55 +1,79 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, restaurants, menus, meals, desserts, sideDishes, drinks CASCADE;
+DROP TABLE IF EXISTS customers, owners, restaurants, categories, meals, orders, requests, bills CASCADE;
 
-CREATE TABLE users (
+CREATE TABLE customers (
     id SERIAL PRIMARY KEY NOT NULL,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    location TEXT,
+    phone INTEGER,
+    picture TEXT
+);
+
+CREATE TABLE owners (
+    id SERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone INTEGER,
+    picture TEXT
 );
 
 CREATE TABLE restaurants (
   id SERIAL PRIMARY KEY NOT NULL,
-  restaurantName VARCHAR(255),
-  location  VARCHAR(255),
-  type VARCHAR(255)
+  ownerID INTEGER REFERENCES owners(id) ON UPDATE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  location TEXT,
+  phone INTEGER,
+  picture TEXT,
+  description TEXT,
+  type VARCHAR(155),
+  rating INTEGER,
+  income FLOAT
 );
 
-CREATE TABLE menus (
+CREATE TABLE categories (
   id SERIAL PRIMARY KEY NOT NULL,
-  menuName VARCHAR(255),
-  restaurantID INTEGER REFERENCES restaurants(id) ON UPDATE CASCADE
+  restaurantID INTEGER RE4 restaurant(id) ON UPDATE CASCADE,
+  name VARCHAR(155),
+  picture TEXT
 );
 
 CREATE TABLE meals (
   id SERIAL PRIMARY KEY NOT NULL,
-  mealName VARCHAR(255),
-  price INTEGER,
-  mealPic VARCHAR(255),
-  menuID INTEGER REFERENCES menus(id) ON UPDATE CASCADE
+  name VARCHAR(255),
+  description TEXT,
+  price FLOAT,
+  rating INTEGER,
+  picture TEXT
 );
 
-CREATE TABLE desserts (
+CREATE TABLE requests (
   id SERIAL PRIMARY KEY NOT NULL,
-  dessertName VARCHAR(255),
-  price INTEGER,
-  dessertPic VARCHAR(255),
-  menuID INTEGER REFERENCES menus(id) ON UPDATE CASCADE
+  customerID INTEGER RE4 customers(id) ON UPDATE CASCADE,
+  restaurantID INTEGER RE4 restaurant(id) ON UPDATE CASCADE,
+  mealID INTEGER RE4 meals(id) ON UPDATE CASCADE,
+  quantity INTEGER,
+  description TEXT
 );
 
-CREATE TABLE sideDishes (
+CREATE TABLE orders(
   id SERIAL PRIMARY KEY NOT NULL,
-  dishName VARCHAR(255),
-  price INTEGER,
-  dishPic VARCHAR(255),
-  menuID INTEGER REFERENCES menus(id) ON UPDATE CASCADE
+  requestID INTEGER RE4 requests(id) ON UPDATE CASCADE,
+  state TEXT,
+  bill FLOAT,
+  arriveTime TIME(6)
 );
 
-CREATE TABLE drinks (
+CREATE TABLE bills(
   id SERIAL PRIMARY KEY NOT NULL,
-  drinkName VARCHAR(255),
-  price INTEGER,
-  menuID INTEGER REFERENCES menus(id) ON UPDATE CASCADE
+  customerID INTEGER RE4 customers(id) ON UPDATE CASCADE,
+  restaurantID INTEGER RE4 restaurant(id) ON UPDATE CASCADE,
+  money FLOAT,
+  date TIMESTAMP CURRENT_DATE
 );
 
 COMMIT;
