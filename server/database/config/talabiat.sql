@@ -30,6 +30,7 @@ CREATE TABLE restaurants (
   phone INTEGER,
   picture TEXT,
   description TEXT,
+  type VARCHAR(155),
   rating INTEGER,
   income FLOAT
 );
